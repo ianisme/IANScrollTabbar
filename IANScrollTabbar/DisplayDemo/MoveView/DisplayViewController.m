@@ -77,7 +77,11 @@ static NSString * const ReuseIdentifier = @"ReuseIdentifier";
     }
      UIViewController *vc = self.childViewControllers[index];
     if (vc.view) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:DisplayViewClickOrScrollDidFinsh  object:vc];
+        double delayInSeconds = 0.2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [[NSNotificationCenter defaultCenter] postNotificationName:DisplayViewClickOrScrollDidFinsh  object:vc.childViewControllers.firstObject];
+        });
     }
 }
 
@@ -130,15 +134,13 @@ static NSString * const ReuseIdentifier = @"ReuseIdentifier";
 
 #pragma mark - UIScrollViewDelegate
 
-// 减速完成
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     CGFloat offsetX = scrollView.contentOffset.x;
     NSInteger offsetXInt = offsetX;
     NSInteger screenWInt = self.view.bounds.size.width;
     NSInteger i = offsetXInt / screenWInt;
-    NSLog(@"%ld",i);
-    
+
     UIViewController *vc = self.childViewControllers[i];
     [[NSNotificationCenter defaultCenter] postNotificationName:DisplayViewClickOrScrollDidFinsh object:vc];
 
@@ -157,10 +159,8 @@ static NSString * const ReuseIdentifier = @"ReuseIdentifier";
     if (_contentScrollView == nil) {
         
         DisplayLayout *layout = [[DisplayLayout alloc] init];
-        
         UICollectionView *contentScrollView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _contentScrollView = contentScrollView;
-        // 设置内容滚动视图
         _contentScrollView.pagingEnabled = YES;
         _contentScrollView.showsHorizontalScrollIndicator = NO;
         _contentScrollView.bounces = NO;

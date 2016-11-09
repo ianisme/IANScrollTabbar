@@ -13,16 +13,16 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    // Center image
+    // 此处可以微调图片的位置
     CGPoint center = self.imageView.center;
     center.x = self.frame.size.width/2;
-    center.y = self.imageView.frame.size.height/2;
+    center.y = self.imageView.frame.size.height/2 + 3;
     self.imageView.center = center;
     
-    //Center text
+    // 此处可以微调文字的位置
     CGRect newFrame = [self titleLabel].frame;
     newFrame.origin.x = 0;
-    newFrame.origin.y = self.imageView.frame.size.height + 0;
+    newFrame.origin.y = self.imageView.frame.size.height + 5;
     newFrame.size.width = self.frame.size.width;
     
     self.titleLabel.frame = newFrame;

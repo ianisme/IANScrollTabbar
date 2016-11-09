@@ -1,16 +1,23 @@
 //
 //  FullChildViewController.m
-//  YZDisplayViewControllerDemo
+//  DisplayDemo
 //
-//  Created by yz on 15/12/5.
-//  Copyright © 2015年 yz. All rights reserved.
-//
+//  Created by ian on 16/9/22.
+//  Copyright © 2016年 ian. All rights reserved.
 
 #import "FullChildViewController.h"
 
-//#import "YZDisplayViewHeader.h"
 
 @implementation FullChildViewController
+
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.hidesBottomBarWhenPushed = YES;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:DisplayViewClickOrScrollDidFinsh object:self];
+    }
+    return self;
+}
 
 
 - (void)viewDidLoad
@@ -21,17 +28,12 @@
     self.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1];
     
     self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:DisplayViewClickOrScrollDidFinsh object:self];
-    
-    
 }
 
 - (void)loadData
 {
     
 }
-
 
 - (void)dealloc
 {

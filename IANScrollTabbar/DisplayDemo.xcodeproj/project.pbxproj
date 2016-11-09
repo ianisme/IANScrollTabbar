@@ -16,10 +16,10 @@
 		3C1A96A01D9289DC004A7204 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A969F1D9289DC004A7204 /* MainTabBarViewController.m */; };
 		3C1A96A61D928EFB004A7204 /* TabbarItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A96A51D928EFB004A7204 /* TabbarItemModel.m */; };
 		3C1A96AB1D937D8F004A7204 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A96AA1D937D8F004A7204 /* DisplayViewController.m */; };
-		3C1A96AE1D9382A0004A7204 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A96AD1D9382A0004A7204 /* HomeViewController.m */; };
 		3C1A96B11D9382EA004A7204 /* MainDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A96B01D9382EA004A7204 /* MainDisplayViewController.m */; };
 		3C1A96B41D93ADD5004A7204 /* DisplayLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A96B31D93ADD5004A7204 /* DisplayLayout.m */; };
 		3C1A96B71D93AF77004A7204 /* FullChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A96B61D93AF77004A7204 /* FullChildViewController.m */; };
+		3C2BFBD61DD347DE0066CBB7 /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2BFBD51DD347DE0066CBB7 /* ChildViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,14 +42,14 @@
 		3C1A96A71D937467004A7204 /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacros.h; sourceTree = "<group>"; };
 		3C1A96A91D937D8F004A7204 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		3C1A96AA1D937D8F004A7204 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
-		3C1A96AC1D9382A0004A7204 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		3C1A96AD1D9382A0004A7204 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		3C1A96AF1D9382EA004A7204 /* MainDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainDisplayViewController.h; sourceTree = "<group>"; };
 		3C1A96B01D9382EA004A7204 /* MainDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainDisplayViewController.m; sourceTree = "<group>"; };
 		3C1A96B21D93ADD5004A7204 /* DisplayLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayLayout.h; sourceTree = "<group>"; };
 		3C1A96B31D93ADD5004A7204 /* DisplayLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayLayout.m; sourceTree = "<group>"; };
 		3C1A96B51D93AF77004A7204 /* FullChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullChildViewController.h; sourceTree = "<group>"; };
 		3C1A96B61D93AF77004A7204 /* FullChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullChildViewController.m; sourceTree = "<group>"; };
+		3C2BFBD41DD347DE0066CBB7 /* ChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildViewController.h; sourceTree = "<group>"; };
+		3C2BFBD51DD347DE0066CBB7 /* ChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +128,8 @@
 				3C1A96B01D9382EA004A7204 /* MainDisplayViewController.m */,
 				3C1A96B21D93ADD5004A7204 /* DisplayLayout.h */,
 				3C1A96B31D93ADD5004A7204 /* DisplayLayout.m */,
-				3C1A96AC1D9382A0004A7204 /* HomeViewController.h */,
-				3C1A96AD1D9382A0004A7204 /* HomeViewController.m */,
+				3C2BFBD41DD347DE0066CBB7 /* ChildViewController.h */,
+				3C2BFBD51DD347DE0066CBB7 /* ChildViewController.m */,
 				3C1A96B51D93AF77004A7204 /* FullChildViewController.h */,
 				3C1A96B61D93AF77004A7204 /* FullChildViewController.m */,
 			);
@@ -168,7 +168,7 @@
 					3C1A96761D926D6B004A7204 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = DAW493MYAY;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -207,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C1A96A61D928EFB004A7204 /* TabbarItemModel.m in Sources */,
+				3C2BFBD61DD347DE0066CBB7 /* ChildViewController.m in Sources */,
 				3C1A96991D92782D004A7204 /* CustomTabBar.m in Sources */,
 				3C1A967F1D926D6B004A7204 /* AppDelegate.m in Sources */,
 				3C1A96961D92736A004A7204 /* TabBarItem.m in Sources */,
@@ -214,7 +215,6 @@
 				3C1A96B11D9382EA004A7204 /* MainDisplayViewController.m in Sources */,
 				3C1A96B71D93AF77004A7204 /* FullChildViewController.m in Sources */,
 				3C1A96A01D9289DC004A7204 /* MainTabBarViewController.m in Sources */,
-				3C1A96AE1D9382A0004A7204 /* HomeViewController.m in Sources */,
 				3C1A967C1D926D6B004A7204 /* main.m in Sources */,
 				3C1A969D1D9284C7004A7204 /* TabbarButton.m in Sources */,
 				3C1A96AB1D937D8F004A7204 /* DisplayViewController.m in Sources */,
@@ -322,6 +322,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ianisme.DisplayDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4d6c8297-cd9b-45b0-9e94-68f5d042c0b4";
+				PROVISIONING_PROFILE_SPECIFIER = ianNew;
 			};
 			name = Debug;
 		};
@@ -330,7 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = DAW493MYAY;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DisplayDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ianisme.DisplayDemo;

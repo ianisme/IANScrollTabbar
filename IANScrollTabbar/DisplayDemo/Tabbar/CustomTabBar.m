@@ -55,6 +55,7 @@
     // 这里是tabbar的背景图片
     UIImageView *backImageView = [[UIImageView alloc] initWithFrame:self.bounds];
     backImageView.userInteractionEnabled = YES;
+    backImageView.image = [UIImage imageNamed:@"Tabbar_bg"];
     [self addSubview:backImageView];
     _backImageView = backImageView;
     

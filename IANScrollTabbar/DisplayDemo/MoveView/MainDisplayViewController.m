@@ -22,9 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-//    self.view.frame = CGRectMake(0, 0, DisplayScreenW, DisplayScreenH - 49);
+
     self.scrollViewDidEndBlock = ^(NSUInteger index){
-        
+        NSLog(@"滑动到第%ld个Controller",index);
     };
     [self configAllViewController];
     [self createTabbar];
@@ -68,8 +68,8 @@
     NSMutableArray *SelectedBackground = [@[]mutableCopy];
     NSMutableArray *tabbarLabelName = [@[]mutableCopy];
     
-    background = [@[@"home_banjia", @"home_duanzu", @"home_hezu", @"home_zhengzu", @"home_ziruyu"]mutableCopy];
-    SelectedBackground = [@[@"home_banjia_hight", @"home_duanzu_hight", @"home_hezu_hight", @"home_zhengzu_hight", @"home_ziruyu_hight"]mutableCopy];
+    background = [@[@"tabbar_home", @"tabbar_inbox", @"tabbar_star", @"tabbar_download", @"tabbar_about"]mutableCopy];
+    SelectedBackground = [@[@"tabbar_homeHighLight", @"tabbar_inboxHighLight", @"tabbar_StarHighLight", @"tabbar_downloadHighLight", @"tabbar_aboutHighLight"]mutableCopy];
     tabbarLabelName = [@[@"推荐",@"分类",@"收藏",@"本地",@"设置"]mutableCopy];
     
     [self createTabbarTitles:tabbarLabelName images:background selectedImages:SelectedBackground];

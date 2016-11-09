@@ -1,10 +1,9 @@
 //
 //  FullChildViewController.h
-//  YZDisplayViewControllerDemo
+//  DisplayDemo
 //
-//  Created by yz on 15/12/5.
-//  Copyright © 2015年 yz. All rights reserved.
-//
+//  Created by ian on 16/9/22.
+//  Copyright © 2016年 ian. All rights reserved.
 
 #import <UIKit/UIKit.h>
 
