@@ -322,8 +322,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ianisme.DisplayDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4d6c8297-cd9b-45b0-9e94-68f5d042c0b4";
-				PROVISIONING_PROFILE_SPECIFIER = ianNew;
+				PROVISIONING_PROFILE = "244042b1-a5ac-4e2d-b676-c75918350e69";
+				PROVISIONING_PROFILE_SPECIFIER = ianDev;
 			};
 			name = Debug;
 		};
