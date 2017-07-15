@@ -39,27 +39,27 @@
     FullChildViewController *vc1 = [[FullChildViewController alloc] init];
     vc1.title = @"测试1";
     vc1.view.backgroundColor = [UIColor redColor];
-    [self addChildViewController:vc1];
-    
+    [self.contentControllers addObject:[self creatNavController:vc1]];
+
     FullChildViewController *vc2 = [[FullChildViewController alloc] init];
     vc2.title = @"测试1";
     vc2.view.backgroundColor = [UIColor whiteColor];
-    [self addChildViewController:vc2];
+    [self.contentControllers addObject:[self creatNavController:vc2]];
     
     FullChildViewController *vc3 = [[FullChildViewController alloc] init];
     vc3.title = @"测试1";
     vc3.view.backgroundColor = [UIColor blackColor];
-    [self addChildViewController:vc3];
+    [self.contentControllers addObject:[self creatNavController:vc3]];
     
     FullChildViewController *vc4 = [[FullChildViewController alloc] init];
     vc4.title = @"测试1";
     vc4.view.backgroundColor = [UIColor greenColor];
-    [self addChildViewController:vc4];
+    [self.contentControllers addObject:[self creatNavController:vc4]];
     
     FullChildViewController *vc5 = [[FullChildViewController alloc] init];
     vc5.title = @"测试1";
     vc5.view.backgroundColor = [UIColor purpleColor];
-    [self addChildViewController:vc5];
+    [self.contentControllers addObject:[self creatNavController:vc5]];
 }
 
 - (void)createTabbar

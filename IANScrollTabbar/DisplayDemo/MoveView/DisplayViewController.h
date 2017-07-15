@@ -16,8 +16,12 @@ typedef void(^ScrollViewDidEndBlock)(NSUInteger);
 
 @property (nonatomic, copy) ScrollViewDidEndBlock scrollViewDidEndBlock;
 
+@property (nonatomic, strong) NSMutableArray *contentControllers;
+
 - (void)createTabbarTitles:(NSArray *)titles images:(NSArray *)images selectedImages:(NSArray *)selectedImages;
 
 - (void)tabBarClick:(NSUInteger)index;
+
+- (UINavigationController *)creatNavController:(UIViewController *)vc;
 
 @end

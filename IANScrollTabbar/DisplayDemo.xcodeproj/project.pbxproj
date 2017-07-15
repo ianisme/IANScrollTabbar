@@ -20,6 +20,7 @@
 		3C1A96B41D93ADD5004A7204 /* DisplayLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A96B31D93ADD5004A7204 /* DisplayLayout.m */; };
 		3C1A96B71D93AF77004A7204 /* FullChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A96B61D93AF77004A7204 /* FullChildViewController.m */; };
 		3C2BFBD61DD347DE0066CBB7 /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2BFBD51DD347DE0066CBB7 /* ChildViewController.m */; };
+		3CC0A04D1F1A4A5800A61231 /* DisplayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC0A04C1F1A4A5800A61231 /* DisplayCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		3C1A96B61D93AF77004A7204 /* FullChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullChildViewController.m; sourceTree = "<group>"; };
 		3C2BFBD41DD347DE0066CBB7 /* ChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildViewController.h; sourceTree = "<group>"; };
 		3C2BFBD51DD347DE0066CBB7 /* ChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildViewController.m; sourceTree = "<group>"; };
+		3CC0A04B1F1A4A5800A61231 /* DisplayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayCollectionViewCell.h; sourceTree = "<group>"; };
+		3CC0A04C1F1A4A5800A61231 /* DisplayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 			children = (
 				3C1A96A91D937D8F004A7204 /* DisplayViewController.h */,
 				3C1A96AA1D937D8F004A7204 /* DisplayViewController.m */,
+				3CC0A04B1F1A4A5800A61231 /* DisplayCollectionViewCell.h */,
+				3CC0A04C1F1A4A5800A61231 /* DisplayCollectionViewCell.m */,
 				3C1A96AF1D9382EA004A7204 /* MainDisplayViewController.h */,
 				3C1A96B01D9382EA004A7204 /* MainDisplayViewController.m */,
 				3C1A96B21D93ADD5004A7204 /* DisplayLayout.h */,
@@ -213,6 +218,7 @@
 				3C1A96961D92736A004A7204 /* TabBarItem.m in Sources */,
 				3C1A96B41D93ADD5004A7204 /* DisplayLayout.m in Sources */,
 				3C1A96B11D9382EA004A7204 /* MainDisplayViewController.m in Sources */,
+				3CC0A04D1F1A4A5800A61231 /* DisplayCollectionViewCell.m in Sources */,
 				3C1A96B71D93AF77004A7204 /* FullChildViewController.m in Sources */,
 				3C1A96A01D9289DC004A7204 /* MainTabBarViewController.m in Sources */,
 				3C1A967C1D926D6B004A7204 /* main.m in Sources */,

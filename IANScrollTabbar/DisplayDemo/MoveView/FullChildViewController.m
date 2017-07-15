@@ -27,7 +27,7 @@
     
     self.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1];
     
-    self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);
 }
 
 - (void)loadData

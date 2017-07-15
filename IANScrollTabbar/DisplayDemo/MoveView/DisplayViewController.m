@@ -10,6 +10,7 @@
 #import "DisplayLayout.h"
 #import "TabbarItemModel.h"
 #import "CustomTabBar.h"
+#import "DisplayCollectionViewCell.h"
 
 static NSString * const ReuseIdentifier = @"ReuseIdentifier";
 
@@ -31,6 +32,7 @@ static NSString * const ReuseIdentifier = @"ReuseIdentifier";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _contentControllers = [@[] mutableCopy];
 }
 
 - (void)viewDidLayoutSubviews
@@ -52,10 +54,10 @@ static NSString * const ReuseIdentifier = @"ReuseIdentifier";
         
         _isInitial = YES;
 
-        [self.contentScrollView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:ReuseIdentifier];
+        [self.contentScrollView registerClass:[DisplayCollectionViewCell class] forCellWithReuseIdentifier:ReuseIdentifier];
         self.contentScrollView.backgroundColor = self.view.backgroundColor;
 
-        NSUInteger count = self.childViewControllers.count;
+        NSUInteger count = self.contentControllers.count;
         self.contentScrollView.contentSize = CGSizeMake(count * self.view.bounds.size.width, 0);
     }
 }
@@ -75,7 +77,7 @@ static NSString * const ReuseIdentifier = @"ReuseIdentifier";
     if (self.scrollViewDidEndBlock) {
         self.scrollViewDidEndBlock(index);
     }
-     UIViewController *vc = self.childViewControllers[index];
+     UIViewController *vc = self.contentControllers[index];
     if (vc.view) {
         double delayInSeconds = 0.2;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
@@ -114,23 +116,31 @@ static NSString * const ReuseIdentifier = @"ReuseIdentifier";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.childViewControllers.count;
+    return self.contentControllers.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ReuseIdentifier forIndexPath:indexPath];
+    DisplayCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ReuseIdentifier forIndexPath:indexPath];
     
-    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
-    UIViewController *vc = self.childViewControllers[indexPath.row];
-    
-    vc.view.frame = CGRectMake(0, 0, self.contentScrollView.frame.size.width, self.contentScrollView.frame.size.height);
-    
-    [cell.contentView addSubview:vc.view];
+    UIViewController *vc = self.contentControllers[indexPath.row];
+    cell.contentViewController = vc;
     
     return cell;
 }
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    DisplayCollectionViewCell *dislayCell = (DisplayCollectionViewCell *)cell;
+    [dislayCell addViewControllerToParentViewController:self];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    DisplayCollectionViewCell *dislayCell = (DisplayCollectionViewCell *)cell;
+    [dislayCell removeViewControllerFromParentViewController];
+}
+
 
 #pragma mark - UIScrollViewDelegate
 
@@ -151,6 +161,14 @@ static NSString * const ReuseIdentifier = @"ReuseIdentifier";
     [_tabBar refreshTabBarButton:i];
 }
 
+
+#pragma mark - private method
+
+- (UINavigationController *)creatNavController:(UIViewController *)vc
+{
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    return nav;
+}
 
 #pragma mark - getter and setter
 
